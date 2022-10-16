@@ -16,7 +16,7 @@ public class SupplyChain extends Application {
     private int searchBarX=100;
     private static final int width=700,height=550,upperLine=50;
 
-    ProductDetails productDetails= new ProductDetails();
+    ProductDetails productDetails = new ProductDetails();
 
     private Pane headerBar(){
         Pane topPane= new Pane();
@@ -53,7 +53,7 @@ public class SupplyChain extends Application {
         Pane root= new Pane();
         root.setPrefSize(width,height+upperLine);
         root.setStyle("-fx-background-color: #AEBDCA");
-        root.getChildren().addAll(headerBar());
+        root.getChildren().addAll(headerBar(),productDetails.getAllProducts());
         return root;
     }
     @Override
