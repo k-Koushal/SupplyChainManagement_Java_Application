@@ -86,7 +86,7 @@ public class ProductDetails {
         }
         if (productTable.getSelectionModel().getSelectedIndex() != -1) {
             Product selectedProduct = productTable.getSelectionModel().getSelectedItem();
-            System.out.println("Angad");
+            System.out.println("kk");
             System.out.println(selectedProduct.getId() + " " + selectedProduct.getName() + " " +  selectedProduct.getPrice());
 //            nameTextField.setText(selectedProduct.getName());
 //            addressTextField.setText(selectedProduct.getAddress());
