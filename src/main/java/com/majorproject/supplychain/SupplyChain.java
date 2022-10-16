@@ -1,47 +1,49 @@
 package com.majorproject.supplychain;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class SupplyChain extends Application {
     Button loginButton;
-    private static final int width=700,height=600,upperLine=50;
+    private int searchBarX=100;
+    private static final int width=700,height=550,upperLine=50;
+
+    ProductDetails productDetails= new ProductDetails();
 
     private Pane headerBar(){
         Pane topPane= new Pane();
         topPane.setPrefSize(width,upperLine-10);
 
         // addlogo
-        Image image= new Image("C:\\Users\\Koushal_K\\Desktop\\SupplyChain\\logo.png");
+        Image image= new Image("C:\\Users\\Koushal_K\\Desktop\\SupplyChain\\src\\logo.png");
         ImageView logo=new ImageView(image);
-        logo.setFitHeight(50);
-        logo.setFitWidth(50);
+        logo.setFitHeight(70);
+        logo.setFitWidth(70);
         logo.setTranslateX(10);
+        logo.setTranslateY(5);
 
         // textField: for search
         TextField searchText= new TextField();
         searchText.setPromptText("Search here");
-        searchText.setTranslateX((80));
+        searchText.setTranslateX((searchBarX));
+        searchText.setTranslateY(30);
         searchText.setPrefWidth((double)300);
-        searchText.setTranslateY(10);
 
         //create Buttons
         Button searchButton=new Button("Search");
         Button loginButton= new Button("Login");
-        searchButton.setTranslateX(385);
+        searchButton.setTranslateX(searchBarX+305);
         loginButton.setTranslateX(480);
-        searchButton.setTranslateY(10);
-        loginButton.setTranslateY(10);
+        searchButton.setTranslateY(30);
+        loginButton.setTranslateY(30);
 
         topPane.getChildren().addAll(searchText,searchButton,loginButton,logo);
 
@@ -50,7 +52,8 @@ public class HelloApplication extends Application {
     private Pane CreateContent(){
         Pane root= new Pane();
         root.setPrefSize(width,height+upperLine);
-        root.getChildren().add(headerBar());
+        root.setStyle("-fx-background-color: #AEBDCA");
+        root.getChildren().addAll(headerBar());
         return root;
     }
     @Override
