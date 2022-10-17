@@ -28,7 +28,7 @@ public class Login {
         return "";
     }
 
-    public static boolean customerLogin(String email, String password) throws NoSuchAlgorithmException {
+    public static boolean customerLogin(String email, String password)  {
         try{
             DatabaseConnection dbCon = new DatabaseConnection();
             String encryptedPassword = getEncryptedPassword(password);
@@ -42,6 +42,8 @@ public class Login {
         }
         return false;
     }
+
+
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
         System.out.println(Login.getEncryptedPassword("123456"));

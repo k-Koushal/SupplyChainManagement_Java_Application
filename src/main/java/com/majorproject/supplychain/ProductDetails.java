@@ -1,13 +1,14 @@
 package com.majorproject.supplychain;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-
 
 public class ProductDetails {
 
@@ -86,7 +87,7 @@ public class ProductDetails {
         }
         if (productTable.getSelectionModel().getSelectedIndex() != -1) {
             Product selectedProduct = productTable.getSelectionModel().getSelectedItem();
-            System.out.println("kk");
+            System.out.println("Angad");
             System.out.println(selectedProduct.getId() + " " + selectedProduct.getName() + " " +  selectedProduct.getPrice());
 //            nameTextField.setText(selectedProduct.getName());
 //            addressTextField.setText(selectedProduct.getAddress());
@@ -94,6 +95,14 @@ public class ProductDetails {
         else{
             System.out.println("Nothing selected");
         }
+    }
+
+    public int getProductId(){
+        Product selectedProduct = productTable.getSelectionModel().getSelectedItem();
+        if(selectedProduct!=null){
+            return selectedProduct.getId();
+        }
+        return -1;
     }
 
 }
