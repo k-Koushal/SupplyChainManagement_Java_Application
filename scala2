@@ -1,0 +1,8 @@
+if (CUCP_INITIAL_CTXT_ESTAB_UE_MOBILITY_GROUP_ID == "8") {
+  val hasMatchingTwos = (0 until minLength).exists { idx =>
+    setupResultArray(idx) == "2" && mappedSqiArray(idx) == "2"
+  }
+  if (hasMatchingTwos) 1 else 0
+} else {
+  0
+}
